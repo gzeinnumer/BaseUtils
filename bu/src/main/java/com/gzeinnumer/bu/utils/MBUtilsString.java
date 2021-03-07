@@ -1,5 +1,8 @@
 package com.gzeinnumer.bu.utils;
 
+import android.content.Context;
+import android.net.Uri;
+
 public class MBUtilsString {
 
     public static String removeLastChar(String text) {
@@ -80,6 +83,11 @@ public class MBUtilsString {
 
     public static String removeExtension(String fileName) {
         return fileName.substring(0, fileName.lastIndexOf('.'));
+    }
+
+
+    public static String getPath(final Context context, final Uri uri) {
+        return MBFileUtils.getPath(context, uri);
     }
 
 }

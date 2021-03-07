@@ -7,7 +7,7 @@
 </h1>
 
 <p align="center">
-    <a><img src="https://img.shields.io/badge/Version-1.0.0-brightgreen.svg?style=flat"></a>
+    <a><img src="https://img.shields.io/badge/Version-1.1.0-brightgreen.svg?style=flat"></a>
     <a><img src="https://img.shields.io/badge/ID-gzeinnumer-blue.svg?style=flat"></a>
     <a><img src="https://img.shields.io/badge/Java-Suport-green?logo=java&style=flat"></a>
     <a><img src="https://img.shields.io/badge/kotlin-Suport-green?logo=kotlin&style=flat"></a>
@@ -203,6 +203,15 @@ Log.d(TAG, "onCreate_7: "+ result_7); //   663219154.png
 //Remove Extension
 String result_8 = MBUtilsString.removeExtension(result_7);
 Log.d(TAG, "onCreate_8: "+ result_8); //   663219154
+
+//Remove Extension
+Uri fileUri = data.getData();
+String filePath = null;
+try {
+    filePath = MBUtilsString.getPath(getApplicationContext(), fileUri);
+} catch (Exception e) {
+    Toast.makeText(getApplicationContext(), "Error: " + e, Toast.LENGTH_SHORT).show();
+}
 ```
 
 #
@@ -224,6 +233,8 @@ Log.d(TAG, "onCreate_9: "+ result_8); //   data:image/jpeg;base64,kasgfkaghaksfa
   - convertToBase64FromPath
 - **1.0.0**
   - Support SDK 16
+- **1.1.0**
+  - Get File Path
 
 ---
 
