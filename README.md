@@ -203,14 +203,25 @@ Log.d(TAG, "onCreate_7: "+ result_7); //   663219154.png
 //Remove Extension
 String result_8 = MBUtilsString.removeExtension(result_7);
 Log.d(TAG, "onCreate_8: "+ result_8); //   663219154
-
-//Remove Extension
-Uri fileUri = data.getData();
-String filePath = null;
-try {
-    filePath = MBUtilsString.getPath(getApplicationContext(), fileUri);
-} catch (Exception e) {
-    Toast.makeText(getApplicationContext(), "Error: " + e, Toast.LENGTH_SHORT).show();
+```
+Get File Path
+```java
+//get File Path
+@Override
+public void onActivityResult(int requestCode, int resultCode, Intent data) {
+  
+    ...
+    
+    Uri fileUri = data.getData();
+    String filePath = null;
+    try {
+        filePath = MBUtilsString.getPath(getApplicationContext(), fileUri);
+    } catch (Exception e) {
+        Toast.makeText(getApplicationContext(), "Error: " + e, Toast.LENGTH_SHORT).show();
+    }
+    
+    ...
+    
 }
 ```
 
